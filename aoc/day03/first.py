@@ -22,13 +22,14 @@ while i < len(lines):
     will_add = False
     while j < len(lines[i]):
         if lines[i][j].isdigit():
-            # get neighbors
-            neighbors = get_neighbors(lines, i, j)
-            # if neighbor is not 0-9 or '.', will_add = True
-            for neighbor in neighbors:
-                if neighbor != '.' and neighbor.isdigit() == False:
-                    will_add = True
-                    break
+            if not will_add:
+                # get neighbors
+                neighbors = get_neighbors(lines, i, j)
+                # if neighbor is not 0-9 or '.', will_add = True
+                for neighbor in neighbors:
+                    if neighbor != '.' and neighbor.isdigit() == False:
+                        will_add = True
+                        break
             buf += lines[i][j]
         else:
             if will_add:
