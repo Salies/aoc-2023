@@ -14,10 +14,11 @@ def get_neighbors(m, x, y):
 
 nums_to_add = []
 
+line_len = len(lines[0])
 for i in range(len(lines)):
     buf = ''
     will_add = False
-    for j in range(len(lines[i])):
+    for j in range(line_len):
         if lines[i][j].isdigit():
             buf += lines[i][j]
             if will_add:
